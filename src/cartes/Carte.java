@@ -20,7 +20,7 @@ public class Carte implements Comparable<Carte>
 		if (o == null)
 			throw new NullPointerException();
 
-		return (this.getDenomination().caractereSurCarte().compareTo(o.getDenomination().caractereSurCarte()));
+		return (this.getDenomination().compareTo(o.getDenomination()));
 	}
 
 	/**
