@@ -5,8 +5,10 @@ import java.util.Collection;
 import cartes.*;
 import mains.Rang.*;
 
-public class Main
+public class Main implements Comparable<Main>
 {	
+	Collection<Carte> collCarte;
+	
 	/**
 	 * 
 	 */
@@ -24,15 +26,6 @@ public class Main
 		return true;
 	}
 
-	/**
-	 * @param m
-	 * @return
-	 */
-	public int compareTo(Main m)
-	{
-		return 0;
-	}
-	
 	/**
 	 * @return
 	 */
@@ -90,12 +83,10 @@ public class Main
 		return 1;
 	}	
 	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args)
+	@Override
+	public int compareTo(Main o)
 	{
 		// TODO Auto-generated method stub
-
+		return 0;
 	}
 }
