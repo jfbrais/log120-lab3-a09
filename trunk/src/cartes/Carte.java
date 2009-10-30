@@ -44,6 +44,14 @@ public class Carte implements Comparable<Carte>
 	{
 		return CouleurCarte.COULEURS.indexOf(couleur)*1000+Denomination.DENOMINATIONS.indexOf(denom);
 	}
+	
+	public boolean equals(Object obj)
+	{
+		if (obj instanceof Carte)
+			if (this.hashCode()==obj.hashCode())
+				return true;
+		return false;
+	}
 
 	@Override
 	public String toString()
