@@ -112,8 +112,8 @@ public class CarteTest extends TestCase {
 
         // Test two cards with equal values but different suits.
         Carte carteCoulIdenDenomInf = new Carte(carte.getDenomination(), carteCoulInf);
-        assertTrue(carte.compareTo(carteCoulIdenDenomInf) > 0);
-        assertTrue(carteCoulIdenDenomInf.compareTo(carte) < 0);
+        assertTrue(carte.compareTo(carteCoulIdenDenomInf) == 0);
+        assertTrue(carteCoulIdenDenomInf.compareTo(carte) == 0);
         
         // Test that an Ace is always greater than a two and a King.
         Carte carteAs = new Carte(Denomination.AS, carte.getCouleur());
