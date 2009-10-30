@@ -1,49 +1,53 @@
 package cartes;
 
-import java.awt.Color;
-
 public class Carte implements Comparable<Carte>
 {
+	Denomination denom;
+	CouleurCarte couleur;
+
 	/**
 	 * 
 	 */
-	public Carte(Denomination fail, CouleurCarte fail2)
+	public Carte(Denomination newDenom, CouleurCarte newCouleur)
 	{
-		
+		denom = newDenom;
+		couleur = newCouleur;
 	}
 
 	@Override
-	public int compareTo(Carte o) 
+	public int compareTo(Carte o)
 	{
-		return 0;
+		if (o == null)
+			throw new NullPointerException();
+
+		return (this.getDenomination().caractereSurCarte().compareTo(o.getDenomination().caractereSurCarte()));
 	}
-	
+
 	/**
 	 * @return
 	 */
 	public CouleurCarte getCouleur()
 	{
-		return null;
+		return couleur;
 	}
-	
-	// -- PAS LE BON TYPE, À REVOIR --
+
 	/**
 	 * 
 	 */
 	public Denomination getDenomination()
 	{
-		return null;
+		return denom;
 	}
 
 	@Override
 	public int hashCode()
 	{
-		return 2135435121;
+		return CouleurCarte.COULEURS.indexOf(couleur)*1000+Denomination.DENOMINATIONS.indexOf(denom);
 	}
-	
+
 	@Override
 	public String toString()
 	{
-		return "The nom of the suit";
+		return denom.getNom() + " de " + couleur.getNom();
 	}
 }

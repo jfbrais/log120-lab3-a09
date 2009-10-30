@@ -142,7 +142,7 @@ public final class Denomination implements Comparable<Denomination> {
      * 
 	 * @return le symbole representant cette denomination
 	 */
-    public String carectereSurCarte() { 
+    public String caractereSurCarte() { 
         return caractereSurCarte;
     }
 
