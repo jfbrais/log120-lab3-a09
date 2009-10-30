@@ -7,7 +7,7 @@ public class Carte implements Comparable<Carte>
 	/**
 	 * 
 	 */
-	public Carte()
+	public Carte(Denomination fail, CouleurCarte fail2)
 	{
 		
 	}
@@ -21,18 +21,18 @@ public class Carte implements Comparable<Carte>
 	/**
 	 * @return
 	 */
-	public Color getCouleur()
+	public CouleurCarte getCouleur()
 	{
-		return Color.red;
+		return null;
 	}
 	
 	// -- PAS LE BON TYPE, À REVOIR --
 	/**
 	 * 
 	 */
-	public void getDenomination()
+	public Denomination getDenomination()
 	{
-		
+		return null;
 	}
 
 	@Override

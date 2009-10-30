@@ -1,14 +1,28 @@
+/*
+ * Created on Jun 12, 2005
+ *
+ */
 package cartes;
 
 import java.util.Comparator;
 
-public class ComparateurCartesInverse implements Comparator<ComparateurCartesInverse>
+/**
+ * Classe pour inverser l'ordre de tri de nos cartes.
+ * Normalement elles seront triee en ordre croissante (naturelle).
+ *
+ * @author Cris Fuhrman
+ *
+ */
+public class ComparateurCartesInverse implements Comparator
 {
-	@Override
-	public int compare(ComparateurCartesInverse arg0,
-			ComparateurCartesInverse arg1)
+
+	/* (non-Javadoc)
+	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+	 */
+	public int compare(Object arg0, Object arg1)
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		// inverser l'ordre des cartes dans une liste (plutôt que arg0.compareTo(arg1))
+		return ((Carte) arg1).compareTo((Carte) arg0);
 	}
+
 }

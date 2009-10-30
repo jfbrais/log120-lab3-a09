@@ -28,7 +28,7 @@ public final class CouleurCarte implements Comparable<CouleurCarte> {
     /**
      * La couleur de trèfle.
      */
-    public static final CouleurCarte TRÈFLE = new CouleurCarte("trèfle");
+    public static final CouleurCarte TREFLE = new CouleurCarte("trèfle");
 
     /**
      * La couleur de carreau.
@@ -53,13 +53,12 @@ public final class CouleurCarte implements Comparable<CouleurCarte> {
      * Une liste spécifiant l'importance des couleurs en ordre descendant
      */
     public static final List COULEURS =
-        Collections.unmodifiableList(Arrays.asList(new CouleurCarte[] {TRÈFLE, CARREAU, PIQUE, COEUR}));
+        Collections.unmodifiableList(Arrays.asList(new CouleurCarte[] {TREFLE, CARREAU, PIQUE, COEUR}));
 
 
     //
     // VARIABLES MEMBRES
     //
-
     /**
      * The nom of this suit.
      */
