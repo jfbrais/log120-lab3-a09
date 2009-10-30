@@ -5,20 +5,26 @@ import mains.Rang.*;
 
 public abstract class AbstractAnalyseurRang
 {
-	public abstract void reconnaitreMain();
+	private AbstractAnalyseurRang suivant;
 	
-	public void getSuivant()
+	public abstract boolean reconnaitreMain();
+	
+	public AbstractAnalyseurRang getSuivant()
 	{
-		
+		return suivant;
 	}
 	
-	public void setSuivant()
+	public void setSuivant(AbstractAnalyseurRang newSuivant)
 	{
-		
+		suivant = newSuivant;
 	}
 	
 	public void traiterDemande()
 	{
-		
+		if (!reconnaitreMain())
+		{
+			if (suivant!=null)
+				suivant.traiterDemande();
+		}
 	}
 }
