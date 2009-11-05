@@ -1,8 +1,6 @@
 package mains.Rang;
 
 import java.util.ArrayList;
-import java.util.Collection;
-
 import mains.*;
 import cartes.*;
 
