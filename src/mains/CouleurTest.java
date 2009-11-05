@@ -8,10 +8,7 @@ import cartes.Carte;
 import cartes.CouleurCarte;
 import cartes.Denomination;
 import mains.Rang.*;
-import junit.framework.Assert;
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 /**
  * Ensemble de tests unitaires pour tester l'analyse d'une main qui est une couleur (Flush) de Poker
@@ -20,16 +17,6 @@ import junit.framework.TestSuite;
  */
 public class CouleurTest extends TestCase
 {
-
-	/**
-	 * @param arg0
-	 */
-	public CouleurTest(String arg0)
-	{
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
 	public void test…valueMain()
 	{
 		/*

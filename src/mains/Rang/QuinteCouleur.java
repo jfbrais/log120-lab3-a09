@@ -6,9 +6,12 @@ public class QuinteCouleur extends AbstractAnalyseurRang
 {
 
 	@Override
-	public boolean reconnaitreMain()
+	public boolean reconnaitreMain(ReqAnalyseMain analyseMain)
 	{
-		// TODO Auto-generated method stub
+		if (new Couleur().reconnaitreMain(analyseMain))
+			if (new Quinte().reconnaitreMain(analyseMain))
+				return true;
+			
 		return false;
 	}
 

@@ -4,6 +4,7 @@
  */
 package mains;
 
+import junit.framework.TestCase;
 import cartes.Carte;
 import cartes.Denomination;
 import mains.Rang.*;
@@ -13,18 +14,8 @@ import mains.Rang.*;
  * 
  * @author Cris Fuhrman
  */
-public class QuinteTest extends AbstractAnalyseurRangTest
+public class QuinteTest extends TestCase
 {
-
-	/**
-	 * @param arg0
-	 */
-	public QuinteTest(String arg0)
-	{
-		super(arg0);
-		// TODO Auto-generated constructor stub
-	}
-
 	public void test…valueMain()
 	{
 		/*
