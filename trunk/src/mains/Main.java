@@ -1,5 +1,6 @@
 package mains;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import cartes.*;
@@ -7,7 +8,7 @@ import mains.Rang.*;
 
 public class Main implements Comparable<Main>
 {
-	Collection<Carte> collCarte = new Collection<Carte>();
+	ArrayList<Carte> collCarte = new ArrayList<Carte>();
 
 	/**
 	 * 
@@ -54,7 +55,7 @@ public class Main implements Comparable<Main>
 	/**
 	 * @return
 	 */
-	public Collection<Carte> getCartes()
+	public ArrayList<Carte> getCartes()
 	{
 		return collCarte;
 	}
