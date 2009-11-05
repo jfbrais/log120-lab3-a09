@@ -1,7 +1,6 @@
 package mains;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import cartes.*;
 import mains.Rang.*;
@@ -24,10 +23,25 @@ public class Main implements Comparable<Main>
 	 */
 	public boolean add(Carte c)
 	{
-		if (collCarte.size() < 5)
+		if (collCarte.size() == 0)
 		{
 			collCarte.add(c);
 			return true;
+		}
+		else if (collCarte.size() < 5)
+		{
+			for (int j = 0; j < collCarte.size(); j++)
+			{
+				if (collCarte.get(j).getDenomination().compareTo(
+						c.getDenomination()) > 0)
+				{
+					collCarte.add(j, c);
+					return true;
+				}
+			}
+			collCarte.add(c);
+			return true;
+
 		}
 		return false;
 	}
