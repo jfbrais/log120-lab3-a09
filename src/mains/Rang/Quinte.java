@@ -14,18 +14,6 @@ public class Quinte extends AbstractAnalyseurRang
 	{
 		collCarte = analyseMain.getMain().getCartes();
 
-//		for (int i = 0; i < collCarte.size(); i++)
-//		{
-//			for (int j = 0; j < collCarte.size() - 1; j++)
-//				if (collCarte.get(j).getDenomination().compareTo(
-//						collCarte.get(j + 1).getDenomination()) > 0)
-//				{
-//					Carte temp = collCarte.get(j + 1);
-//					collCarte.remove(j + 1);
-//					collCarte.add(j, temp);
-//				}
-//		}
-
 		int no = Denomination.DENOMINATIONS.indexOf(collCarte.get(0).getDenomination());
 		for (int i = 1; i < collCarte.size(); i++)
 		{
