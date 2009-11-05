@@ -2,11 +2,13 @@
  * Created on Dec 16, 2004
  *
  */
-package mains;
+package mains.Rang;
 
 import cartes.Carte;
 import cartes.CouleurCarte;
 import cartes.Denomination;
+import mains.Main;
+import mains.ReqAnalyseMain;
 import mains.Rang.*;
 import junit.framework.TestCase;
 

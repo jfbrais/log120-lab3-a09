@@ -9,7 +9,7 @@ public class CarteSuperieure extends AbstractAnalyseurRang
 	public boolean reconnaitreMain(ReqAnalyseMain analyseMain)
 	{
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }
