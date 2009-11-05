@@ -37,9 +37,9 @@ public class QuinteRoyaleTest extends TestCase
 		main = new Main();
 		main.add(new Carte(Denomination.AS, cartes.CouleurCarte.TREFLE));
 		main.add(new Carte(Denomination.ROI, cartes.CouleurCarte.TREFLE));
-		main.add(new Carte(Denomination.DAME, cartes.CouleurCarte.PIQUE));
-		main.add(new Carte(Denomination.VALET, cartes.CouleurCarte.CARREAU));
-		main.add(new Carte(Denomination.DIX, cartes.CouleurCarte.COEUR));
+		main.add(new Carte(Denomination.DAME, cartes.CouleurCarte.TREFLE));
+		main.add(new Carte(Denomination.VALET, cartes.CouleurCarte.TREFLE));
+		main.add(new Carte(Denomination.DIX, cartes.CouleurCarte.TREFLE));
 		
 		assertTrue(new QuinteRoyale().reconnaitreMain(new ReqAnalyseMain(main)));
 
@@ -47,10 +47,10 @@ public class QuinteRoyaleTest extends TestCase
 		 * Test avec main qui est une quinte royale.
 		 */
 		main = new Main();
-		main.add(new Carte(Denomination.DIX, cartes.CouleurCarte.PIQUE));
+		main.add(new Carte(Denomination.DIX, cartes.CouleurCarte.CARREAU));
 		main.add(new Carte(Denomination.DAME, cartes.CouleurCarte.CARREAU));
-		main.add(new Carte(Denomination.AS, cartes.CouleurCarte.TREFLE));
-		main.add(new Carte(Denomination.ROI, cartes.CouleurCarte.COEUR));
+		main.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
+		main.add(new Carte(Denomination.ROI, cartes.CouleurCarte.CARREAU));
 		main.add(new Carte(Denomination.VALET, cartes.CouleurCarte.CARREAU));
 		
 		assertTrue(new QuinteRoyale().reconnaitreMain(new ReqAnalyseMain(main)));
