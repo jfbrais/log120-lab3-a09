@@ -2,10 +2,12 @@
  * Created on Dec 16, 2004
  *
  */
-package mains;
+package mains.Rang;
 
 import junit.framework.TestCase;
 import cartes.*;
+import mains.Main;
+import mains.ReqAnalyseMain;
 import mains.Rang.*;
 
 /**

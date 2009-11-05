@@ -2,11 +2,12 @@
  * Created on Dec 16, 2004
  *
  */
-package mains;
+package mains.Rang;
 
 import junit.framework.TestCase;
-import cartes.Carte;
-import cartes.Denomination;
+import cartes.*;
+import mains.Main;
+import mains.ReqAnalyseMain;
 import mains.Rang.*;
 
 /**
@@ -14,12 +15,12 @@ import mains.Rang.*;
  * 
  * @author Cris Fuhrman
  */
-public class QuinteTest extends TestCase
+public class PaireTest extends TestCase
 {
 	public void test…valueMain()
 	{
 		/*
-		 * Test avec main qui n'est pas une quinte
+		 * Test avec main qui n'est pas une paire
 		 */
 		Main main = new Main();
 		main.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.CARREAU));
@@ -28,31 +29,31 @@ public class QuinteTest extends TestCase
 		main.add(new Carte(Denomination.DAME, cartes.CouleurCarte.COEUR));
 		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.COEUR));
 		
-		assertFalse(new Quinte().reconnaitreMain(new ReqAnalyseMain(main)));
+		assertFalse(new Paire().reconnaitreMain(new ReqAnalyseMain(main)));
 
 		/*
-		 * Test avec main qui est une quinte avec AS
+		 * Test avec main qui est une paire basse
 		 */
 		main = new Main();
-		main.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.CARREAU));
-		main.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.CARREAU));
-		main.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.CARREAU));
+		main.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.COEUR));
+		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.TREFLE));
+		main.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.PIQUE));
 		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.CARREAU));
-		main.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
+		main.add(new Carte(Denomination.AS, cartes.CouleurCarte.COEUR));
 		
-		assertTrue(new Quinte().reconnaitreMain(new ReqAnalyseMain(main)));
+		assertTrue(new Paire().reconnaitreMain(new ReqAnalyseMain(main)));
 
 		/*
-		 * Test avec main qui est une quinte sans AS
+		 * Test avec main qui est une paire haute
 		 */
 		main = new Main();
-		main.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.PIQUE));
+		main.add(new Carte(Denomination.ROI, cartes.CouleurCarte.PIQUE));
 		main.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.CARREAU));
-		main.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.TREFLE));
+		main.add(new Carte(Denomination.ROI, cartes.CouleurCarte.TREFLE));
 		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.COEUR));
-		main.add(new Carte(Denomination.SIX, cartes.CouleurCarte.CARREAU));
+		main.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.CARREAU));
 		
-		assertTrue(new Quinte().reconnaitreMain(new ReqAnalyseMain(main)));
+		assertTrue(new Paire().reconnaitreMain(new ReqAnalyseMain(main)));
 
 	}
 }

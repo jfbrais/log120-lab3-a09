@@ -2,10 +2,12 @@
  * Created on Dec 16, 2004
  *
  */
-package mains;
+package mains.Rang;
 
 import junit.framework.TestCase;
 import cartes.*;
+import mains.Main;
+import mains.ReqAnalyseMain;
 import mains.Rang.*;
 
 /**
@@ -13,7 +15,7 @@ import mains.Rang.*;
  * 
  * @author Cris Fuhrman
  */
-public class PaireTest extends TestCase
+public class DeuxPairesTest extends TestCase
 {
 	public void test…valueMain()
 	{
@@ -27,7 +29,7 @@ public class PaireTest extends TestCase
 		main.add(new Carte(Denomination.DAME, cartes.CouleurCarte.COEUR));
 		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.COEUR));
 		
-		assertFalse(new Paire().reconnaitreMain(new ReqAnalyseMain(main)));
+		assertFalse(new DeuxPaires().reconnaitreMain(new ReqAnalyseMain(main)));
 
 		/*
 		 * Test avec main qui est une paire basse
@@ -35,23 +37,23 @@ public class PaireTest extends TestCase
 		main = new Main();
 		main.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.COEUR));
 		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.TREFLE));
-		main.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.PIQUE));
+		main.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.PIQUE));
 		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.CARREAU));
 		main.add(new Carte(Denomination.AS, cartes.CouleurCarte.COEUR));
 		
-		assertTrue(new Paire().reconnaitreMain(new ReqAnalyseMain(main)));
+		assertTrue(new DeuxPaires().reconnaitreMain(new ReqAnalyseMain(main)));
 
 		/*
 		 * Test avec main qui est une paire haute
 		 */
 		main = new Main();
 		main.add(new Carte(Denomination.ROI, cartes.CouleurCarte.PIQUE));
-		main.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.CARREAU));
+		main.add(new Carte(Denomination.DIX, cartes.CouleurCarte.CARREAU));
 		main.add(new Carte(Denomination.ROI, cartes.CouleurCarte.TREFLE));
-		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.COEUR));
+		main.add(new Carte(Denomination.DIX, cartes.CouleurCarte.COEUR));
 		main.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.CARREAU));
 		
-		assertTrue(new Paire().reconnaitreMain(new ReqAnalyseMain(main)));
+		assertTrue(new DeuxPaires().reconnaitreMain(new ReqAnalyseMain(main)));
 
 	}
 }
