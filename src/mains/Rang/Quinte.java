@@ -2,9 +2,7 @@ package mains.Rang;
 
 import java.util.ArrayList;
 
-import cartes.Carte;
-import cartes.CouleurCarte;
-import cartes.Denomination;
+import cartes.*;
 import mains.*;
 
 public class Quinte extends AbstractAnalyseurRang
