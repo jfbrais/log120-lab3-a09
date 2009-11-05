@@ -2,12 +2,13 @@ package mains;
 
 import cartes.*;
 import mains.Rang.*;
+import java.util.*;
 
 public abstract class AbstractAnalyseurRang
 {
 	private AbstractAnalyseurRang suivant;
 	
-	public abstract boolean reconnaitreMain();
+	public abstract boolean reconnaitreMain(ReqAnalyseMain analyseMain);
 	
 	public AbstractAnalyseurRang getSuivant()
 	{
@@ -19,12 +20,12 @@ public abstract class AbstractAnalyseurRang
 		suivant = newSuivant;
 	}
 	
-	public void traiterDemande()
+	public void traiterDemande(Collection<Carte> collCarte, ReqAnalyseMain analyseMain)
 	{
-		if (!reconnaitreMain())
+		if (!reconnaitreMain(analyseMain))
 		{
 			if (suivant!=null)
-				suivant.traiterDemande();
+				suivant.traiterDemande(collCarte, analyseMain);
 		}
 	}
 }
