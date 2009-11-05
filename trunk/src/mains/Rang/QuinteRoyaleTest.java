@@ -65,7 +65,7 @@ public class QuinteRoyaleTest extends TestCase
 		main.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.COEUR));
 		main.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
 		
-		assertTrue(new QuinteRoyale().reconnaitreMain(new ReqAnalyseMain(main)));
+		assertFalse(new QuinteRoyale().reconnaitreMain(new ReqAnalyseMain(main)));
 	}
 }
 
