@@ -104,7 +104,7 @@ public class Main implements Comparable<Main>
 	 */
 	public int size()
 	{
-		return 1;
+		return collCarte.size();
 	}
 
 	@Override
