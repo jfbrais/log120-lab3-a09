@@ -56,7 +56,7 @@ public class QuinteRoyaleTest extends TestCase
 		assertTrue(new QuinteRoyale().reconnaitreMain(new ReqAnalyseMain(main)));
 
 		/*
-		 * Test avec main qui est une quinte royale.
+		 * Test avec main qui n'est pas une quinte royale.
 		 */
 		main = new Main();
 		main.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.PIQUE));
