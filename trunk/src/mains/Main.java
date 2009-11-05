@@ -6,24 +6,29 @@ import cartes.*;
 import mains.Rang.*;
 
 public class Main implements Comparable<Main>
-{	
-	Collection<Carte> collCarte;
-	
+{
+	Collection<Carte> collCarte = new Collection<Carte>();
+
 	/**
 	 * 
 	 */
 	public Main()
 	{
-		
+
 	}
-	
+
 	/**
 	 * @param c
 	 * @return
 	 */
 	public boolean add(Carte c)
 	{
-		return true;
+		if (collCarte.size() < 5)
+		{
+			collCarte.add(c);
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -31,25 +36,29 @@ public class Main implements Comparable<Main>
 	 */
 	public boolean estValide()
 	{
-		return true;
+		if (collCarte.size() == 5)
+		{
+			return true;
+		}
+		return false;
 	}
-	
+
 	/**
 	 * 
 	 */
 	public void first()
 	{
-		
+
 	}
-	
+
 	/**
 	 * @return
 	 */
 	public Collection<Carte> getCartes()
 	{
-		return null;
+		return collCarte;
 	}
-	
+
 	/**
 	 * @return
 	 */
@@ -57,15 +66,15 @@ public class Main implements Comparable<Main>
 	{
 		return null;
 	}
-	
+
 	/**
 	 * 
 	 */
 	public void iterator()
 	{
-		
+
 	}
-	
+
 	/**
 	 * @param c
 	 * @return
@@ -81,8 +90,8 @@ public class Main implements Comparable<Main>
 	public int size()
 	{
 		return 1;
-	}	
-	
+	}
+
 	@Override
 	public int compareTo(Main o)
 	{
