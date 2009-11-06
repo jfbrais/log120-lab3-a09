@@ -262,7 +262,7 @@ public class MainTest extends TestCase
 		main1.add(new Carte(Denomination.NEUF, cartes.CouleurCarte.COEUR));
 		
 		main2 = new Main();
-		main2.add(new Carte(Denomination.SIX, cartes.CouleurCarte.CARREAU));
+		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
 		main2.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.PIQUE));
 		main2.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.TREFLE));
 		main2.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.COEUR));
