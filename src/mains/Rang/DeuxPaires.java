@@ -17,6 +17,7 @@ public class DeuxPaires extends AbstractAnalyseurRang
 				
 		int paires = 0;
 		int denomPaire1 = 0;
+		int denomPaire2 = 0;
 		int no = Denomination.DENOMINATIONS.indexOf(collCarte.get(0).getDenomination());
 		for (int i=1;i<collCarte.size();i++)
 		{
@@ -29,8 +30,16 @@ public class DeuxPaires extends AbstractAnalyseurRang
 				else
 				{
 					if (denomPaire1<no)
+					{
+						denomPaire2=denomPaire1;
 						denomPaire1=no;
+					}
+					else
+					{
+						denomPaire2=no;
+					}
 					analyseMain.setRangReconnu(new RangPoker(this,(Denomination)Denomination.DENOMINATIONS.get(denomPaire1)));
+					analyseMain.getRangReconnu().deuxiemePaire((Denomination)Denomination.DENOMINATIONS.get(denomPaire2));
 					return true;
 				}
 			else

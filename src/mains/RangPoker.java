@@ -9,7 +9,9 @@ import mains.Rang.*;
 
 public class RangPoker implements Comparable<RangPoker>
 {
-	Denomination denom;
+	Denomination denom = null;
+	Denomination denom2 = null;
+	Denomination kicker = null;
 	AbstractAnalyseurRang rang;
 
 	public static final List RANGS = Collections.unmodifiableList(Arrays
@@ -39,6 +41,14 @@ public class RangPoker implements Comparable<RangPoker>
 			else if (Denomination.DENOMINATIONS.indexOf(denom) < Denomination.DENOMINATIONS.indexOf(o.getDenom()))
 				return -1;
 			else
+				/*
+				 * if doublepaire, 
+				 * 			test la 2e
+				 * 
+				 * test kicker
+				 * 
+				 * else, fuck all ->0
+				 */
 				return 0;
 		}
 	}
@@ -51,5 +61,10 @@ public class RangPoker implements Comparable<RangPoker>
 	public Denomination getDenom()
 	{
 		return denom;
+	}
+	
+	public void deuxiemePaire(Denomination denom)
+	{
+		denom2 = denom;
 	}
 }
