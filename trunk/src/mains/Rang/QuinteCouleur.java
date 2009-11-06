@@ -10,7 +10,10 @@ public class QuinteCouleur extends AbstractAnalyseurRang
 	{
 		if (new Couleur().reconnaitreMain(analyseMain))
 			if (new Quinte().reconnaitreMain(analyseMain))
-				return true;
+				{	
+					analyseMain.setRangReconnu(new RangPoker(this,analyseMain.getRangReconnu().getDenom()));
+					return true;
+				}
 			
 		return false;
 	}

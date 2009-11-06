@@ -26,12 +26,16 @@ public class Quinte extends AbstractAnalyseurRang
 								Denomination.DENOMINATIONS.indexOf(collCarte.get(2).getDenomination()) == 2 && 
 										Denomination.DENOMINATIONS.indexOf(collCarte.get(3).getDenomination()) == 1 && 
 												Denomination.DENOMINATIONS.indexOf(collCarte.get(4).getDenomination()) == 0)
-					return true;
+					{
+						analyseMain.setRangReconnu(new RangPoker(this,collCarte.get(0).getDenomination()));
+						return true;
+					}
 				else
 					return false;
 			}
 		}
-
+		
+		analyseMain.setRangReconnu(new RangPoker(this,collCarte.get(4).getDenomination()));
 		return true;
 	}
 

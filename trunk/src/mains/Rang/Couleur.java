@@ -19,6 +19,8 @@ public class Couleur extends AbstractAnalyseurRang
 			if (collCarte.get(i).getCouleur() != couleur)
 				return false;
 		}
+		
+		analyseMain.setRangReconnu(new RangPoker(this,collCarte.get(0).getDenomination()));
 		return true;
 	}
 

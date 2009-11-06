@@ -41,7 +41,10 @@ public class MainPleine extends AbstractAnalyseurRang
 			{
 				if (collCarte.get(i).getDenomination() != brelan)
 				if (Denomination.DENOMINATIONS.indexOf(collCarte.get(i).getDenomination())==no)
+				{
+					analyseMain.setRangReconnu(new RangPoker(this,brelan));
 					return true;
+				}
 				else
 					no = Denomination.DENOMINATIONS.indexOf(collCarte.get(i).getDenomination());
 			}
