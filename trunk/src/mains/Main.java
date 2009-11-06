@@ -9,6 +9,7 @@ import mains.Rang.*;
 public class Main implements Comparable<Main>, Iterable<Carte>
 {
 	ArrayList<Carte> collCarte = new ArrayList<Carte>();
+	RangPoker rang;
 
 	/**
 	 * 
@@ -34,7 +35,7 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 			for (int j = 0; j < collCarte.size(); j++)
 			{
 				if (collCarte.get(j).getDenomination().compareTo(
-						c.getDenomination()) > 0)
+						c.getDenomination()) < 0)
 				{
 					collCarte.add(j, c);
 					return true;
@@ -62,9 +63,9 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	/**
 	 * 
 	 */
-	public void first()
+	public Carte first()
 	{
-
+		return collCarte.get(0);
 	}
 
 	/**
@@ -80,7 +81,21 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	 */
 	public RangPoker getRangPoker()
 	{
-		return null;
+		ReqAnalyseMain analyseur = new ReqAnalyseMain(this);
+		AbstractAnalyseurRang first = new QuinteRoyale();
+		first	.setSuivant(new Quintuplet()
+				.setSuivant(new QuinteCouleur()
+				.setSuivant(new Carre()
+				.setSuivant(new MainPleine()
+				.setSuivant(new Couleur()
+				.setSuivant(new Quinte()
+				.setSuivant(new Brelan()
+				.setSuivant(new DeuxPaires()
+				.setSuivant(new Paire()
+				.setSuivant(new CarteSuperieure()))))))))));
+		
+		first.traiterDemande(analyseur);
+		return analyseur.getRangReconnu();
 	}
 
 	/**
@@ -88,7 +103,7 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	 */
 	public Iterator<Carte> iterator()
 	{
-		return null;
+		return collCarte.iterator();
 	}
 
 	/**
@@ -97,6 +112,14 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	 */
 	public boolean remove(Carte c)
 	{
+		for (int i = 0; i < collCarte.size(); i++)
+		{
+			if (collCarte.get(i).equals(c))
+			{
+				collCarte.remove(i);
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -111,7 +134,7 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	@Override
 	public int compareTo(Main o)
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		rang = this.getRangPoker();
+		return rang.compareTo(o.getRangPoker());
 	}
 }

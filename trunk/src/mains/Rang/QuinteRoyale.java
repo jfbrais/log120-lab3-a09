@@ -16,7 +16,7 @@ public class QuinteRoyale extends AbstractAnalyseurRang
 		collCarte = analyseMain.getMain().getCartes();
 		
 		if (new QuinteCouleur().reconnaitreMain(analyseMain))
-			if (Denomination.DENOMINATIONS.indexOf(collCarte.get(3).getDenomination()) == 11 && Denomination.DENOMINATIONS.indexOf(collCarte.get(4).getDenomination()) == 12)
+			if (Denomination.DENOMINATIONS.indexOf(collCarte.get(1).getDenomination()) == 11 && Denomination.DENOMINATIONS.indexOf(collCarte.get(0).getDenomination()) == 12)
 				return true;
 		
 		return false;

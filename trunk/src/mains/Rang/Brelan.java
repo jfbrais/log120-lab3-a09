@@ -25,7 +25,10 @@ public class Brelan extends AbstractAnalyseurRang
 					num++;
 				}
 				else
+				{
+					analyseMain.setRangReconnu(new RangPoker(this,(Denomination)Denomination.DENOMINATIONS.get(no)));
 					return true;
+				}
 			else
 			{
 				no = Denomination.DENOMINATIONS.indexOf(collCarte.get(i).getDenomination());
