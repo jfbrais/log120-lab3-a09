@@ -27,7 +27,7 @@ public class Quinte extends AbstractAnalyseurRang
 										Denomination.DENOMINATIONS.indexOf(collCarte.get(3).getDenomination()) == 1 && 
 												Denomination.DENOMINATIONS.indexOf(collCarte.get(4).getDenomination()) == 0)
 					{
-						analyseMain.setRangReconnu(new RangPoker(this,collCarte.get(0).getDenomination()));
+						analyseMain.setRangReconnu(new RangPoker(this,collCarte.get(1).getDenomination()));
 						return true;
 					}
 				else
@@ -35,7 +35,7 @@ public class Quinte extends AbstractAnalyseurRang
 			}
 		}
 		
-		analyseMain.setRangReconnu(new RangPoker(this,collCarte.get(4).getDenomination()));
+		analyseMain.setRangReconnu(new RangPoker(this,collCarte.get(0).getDenomination()));
 		return true;
 	}
 
