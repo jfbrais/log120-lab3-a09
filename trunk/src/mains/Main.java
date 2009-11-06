@@ -1,11 +1,12 @@
 package mains;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import cartes.*;
 import mains.Rang.*;
 
-public class Main implements Comparable<Main>
+public class Main implements Comparable<Main>, Iterable<Carte>
 {
 	ArrayList<Carte> collCarte = new ArrayList<Carte>();
 
@@ -85,9 +86,9 @@ public class Main implements Comparable<Main>
 	/**
 	 * 
 	 */
-	public void iterator()
+	public Iterator<Carte> iterator()
 	{
-
+		return null;
 	}
 
 	/**
