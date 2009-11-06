@@ -15,17 +15,19 @@ public abstract class AbstractAnalyseurRang
 		return suivant;
 	}
 	
-	public void setSuivant(AbstractAnalyseurRang newSuivant)
+	public AbstractAnalyseurRang setSuivant(AbstractAnalyseurRang newSuivant)
 	{
 		suivant = newSuivant;
+		
+		return this;
 	}
 	
-	public void traiterDemande(Collection<Carte> collCarte, ReqAnalyseMain analyseMain)
+	public void traiterDemande(ReqAnalyseMain analyseMain)
 	{
 		if (!reconnaitreMain(analyseMain))
 		{
 			if (suivant!=null)
-				suivant.traiterDemande(collCarte, analyseMain);
+				suivant.traiterDemande(analyseMain);
 		}
 	}
 }

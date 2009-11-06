@@ -5,8 +5,8 @@ import mains.Rang.*;
 
 public class ReqAnalyseMain
 {
-	RangPoker rang;
-	Main main;
+	private RangPoker rang;
+	private Main main;
 	
 	public ReqAnalyseMain(Main newMain)
 	{
