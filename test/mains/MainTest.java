@@ -237,20 +237,20 @@ public class MainTest extends TestCase
 		
 		// main1 a un brelan égale à main2
 		main1 = new Main();
-		main1.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.CARREAU));
-		main1.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.PIQUE));
-		main1.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.PIQUE));
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.TREFLE));
 		main1.add(new Carte(Denomination.DAME, cartes.CouleurCarte.COEUR));
 		main1.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.COEUR));
 		
 		main2 = new Main();
 		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
-		main2.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.PIQUE));
-		main2.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.TREFLE));
-		main2.add(new Carte(Denomination.DAME, cartes.CouleurCarte.COEUR));
+		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.NEUF, cartes.CouleurCarte.COEUR));
 		main2.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.COEUR));
 		
-		assertTrue(main1.compareTo(main2) > 0);
+		assertTrue(main1.compareTo(main2) == 0);
 		
 		// -- TEST QUINTE --
 		// main1 a une quinte supérieure à main2
