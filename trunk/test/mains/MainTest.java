@@ -133,21 +133,21 @@ public class MainTest extends TestCase
 		assertTrue(main1.compareTo(main2) > 0);
 		
 		// main1 a sa paire supérieure qui est égale à celle de main2
-//		main1 = new Main();
-//		main1.add(new Carte(Denomination.ROI, cartes.CouleurCarte.CARREAU));
-//		main1.add(new Carte(Denomination.ROI, cartes.CouleurCarte.PIQUE));
-//		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.TREFLE));
-//		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.COEUR));
-//		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
-//		
-//		main2 = new Main();
-//		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.CARREAU));
-//		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.PIQUE));
-//		main2.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.TREFLE));
-//		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.COEUR));
-//		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.COEUR));
-//		
-//		assertTrue(main1.compareTo(main2) > 0);
+		main1 = new Main();
+		main1.add(new Carte(Denomination.ROI, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.ROI, cartes.CouleurCarte.PIQUE));
+		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.COEUR));
+		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
+		
+		main2 = new Main();
+		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.CARREAU));
+		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.COEUR));
+		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.COEUR));
+		
+		assertTrue(main1.compareTo(main2) > 0);
 		
 		// main1 a deux paires inférieures à main2
 		main1 = new Main();
@@ -184,21 +184,21 @@ public class MainTest extends TestCase
 		assertTrue(main1.compareTo(main2) == 0);
 		
 		// main1 a deux paires égalent à main2, mais main2 a une cinquième carte plus élevée
-//		main1 = new Main();
-//		main1.add(new Carte(Denomination.DIX, cartes.CouleurCarte.CARREAU));
-//		main1.add(new Carte(Denomination.DIX, cartes.CouleurCarte.PIQUE));
-//		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.TREFLE));
-//		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.COEUR));
-//		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
-//		
-//		main2 = new Main();
-//		main2.add(new Carte(Denomination.DIX, cartes.CouleurCarte.CARREAU));
-//		main2.add(new Carte(Denomination.DIX, cartes.CouleurCarte.PIQUE));
-//		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.TREFLE));
-//		main2.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
-//		main2.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
-//		
-//		assertTrue(main1.compareTo(main2) < 0);
+		main1 = new Main();
+		main1.add(new Carte(Denomination.DIX, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.DIX, cartes.CouleurCarte.PIQUE));
+		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.COEUR));
+		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
+		
+		main2 = new Main();
+		main2.add(new Carte(Denomination.DIX, cartes.CouleurCarte.CARREAU));
+		main2.add(new Carte(Denomination.DIX, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
+		main2.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
+		
+		assertTrue(main1.compareTo(main2) < 0);
 		
 		// -- TEST BRELAN --
 		// main1 a un brelan supérieur à main2
@@ -306,8 +306,56 @@ public class MainTest extends TestCase
 		
 		// -- TEST COULEUR --
 		// main1 a une couleur supérieure à main2
+		main1 = new Main();
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.DIX, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.CARREAU));
+		
+		main2 = new Main();
+		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.PIQUE));
+		
+		assertTrue(main1.compareTo(main2) > 0);
+		
 		// main1 a une couleur inférieure à main2
+		
+		main1 = new Main();
+		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.SIX, cartes.CouleurCarte.TREFLE));
+		
+		main2 = new Main();
+		main2.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.DIX, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.DAME, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.VALET, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.PIQUE));
+		
+		assertTrue(main1.compareTo(main2) < 0);
+		
 		// main1 a une couleur égale à main2
+		main1 = new Main();
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.COEUR));
+		main1.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.COEUR));
+		main1.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.COEUR));
+		main1.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.COEUR));
+		main1.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.COEUR));
+		
+		main2 = new Main();
+		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.TREFLE));
+		
+		assertTrue(main1.compareTo(main2) == 0);
 		
 		// -- TEST MAIN PLEINE --
 		// main1 a une main pleine supérieure à main2
