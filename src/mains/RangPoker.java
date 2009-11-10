@@ -40,16 +40,28 @@ public class RangPoker implements Comparable<RangPoker>
 				return 1;
 			else if (Denomination.DENOMINATIONS.indexOf(denom) < Denomination.DENOMINATIONS.indexOf(o.getDenom()))
 				return -1;
-			else
-				/*
-				 * if doublepaire, 
-				 * 			test la 2e
-				 * 
-				 * test kicker
-				 * 
-				 * else, fuck all ->0
-				 */
+			else if (RANGS.indexOf(rang) == 2 || RANGS.indexOf(rang) == 3)
+				if (Denomination.DENOMINATIONS.indexOf(denom2) > Denomination.DENOMINATIONS.indexOf(o.getDenom2()))
+					return 1;
+				else if (Denomination.DENOMINATIONS.indexOf(denom2) < Denomination.DENOMINATIONS.indexOf(o.getDenom2()))
+					return -1;
+				else
+					;
+			
+			if (Denomination.DENOMINATIONS.indexOf(kicker) > Denomination.DENOMINATIONS.indexOf(o.getKicker()))
+				return 1;
+			else if (Denomination.DENOMINATIONS.indexOf(kicker) < Denomination.DENOMINATIONS.indexOf(o.getKicker()))
+				return -1; 
+			else 
+			{
+				if (RANGS.indexOf(rang) == 5)
+				{
+					//check chaque carte ?
+				}
+				else
+					;
 				return 0;
+			}
 		}
 	}
 
@@ -66,5 +78,20 @@ public class RangPoker implements Comparable<RangPoker>
 	public void deuxiemePaire(Denomination denom)
 	{
 		denom2 = denom;
+	}
+	
+	public Denomination getDenom2()
+	{
+		return denom2;
+	}
+	
+	public void setKicker(Denomination kicker)
+	{
+		this.kicker = kicker;
+	}
+	
+	public Denomination getKicker()
+	{
+		return kicker;
 	}
 }
