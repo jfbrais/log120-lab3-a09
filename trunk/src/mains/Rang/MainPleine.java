@@ -43,6 +43,7 @@ public class MainPleine extends AbstractAnalyseurRang
 				if (Denomination.DENOMINATIONS.indexOf(collCarte.get(i).getDenomination())==no)
 				{
 					analyseMain.setRangReconnu(new RangPoker(this,brelan));
+					analyseMain.getRangReconnu().deuxiemePaire((Denomination)Denomination.DENOMINATIONS.get(no));
 					return true;
 				}
 				else

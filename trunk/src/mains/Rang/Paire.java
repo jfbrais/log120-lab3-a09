@@ -21,6 +21,10 @@ public class Paire extends AbstractAnalyseurRang
 			if (Denomination.DENOMINATIONS.indexOf(collCarte.get(i).getDenomination())==no)
 			{
 				analyseMain.setRangReconnu(new RangPoker(this,(Denomination)Denomination.DENOMINATIONS.get(no)));
+				if (i==1)
+					analyseMain.getRangReconnu().setKicker(collCarte.get(3).getDenomination());
+				else
+					analyseMain.getRangReconnu().setKicker(collCarte.get(0).getDenomination());
 				return true;
 			}
 			else

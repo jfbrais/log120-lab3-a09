@@ -18,6 +18,9 @@ public class DeuxPaires extends AbstractAnalyseurRang
 		int paires = 0;
 		int denomPaire1 = 0;
 		int denomPaire2 = 0;
+		int denomKicker = 0;
+		boolean found = false;
+		
 		int no = Denomination.DENOMINATIONS.indexOf(collCarte.get(0).getDenomination());
 		for (int i=1;i<collCarte.size();i++)
 		{
@@ -38,14 +41,23 @@ public class DeuxPaires extends AbstractAnalyseurRang
 					{
 						denomPaire2=no;
 					}
-					analyseMain.setRangReconnu(new RangPoker(this,(Denomination)Denomination.DENOMINATIONS.get(denomPaire1)));
-					analyseMain.getRangReconnu().deuxiemePaire((Denomination)Denomination.DENOMINATIONS.get(denomPaire2));
-					return true;
+					found = true;
 				}
 			else
+			{
+				denomKicker = no;
 				no = Denomination.DENOMINATIONS.indexOf(collCarte.get(i).getDenomination());
+			}
 		}
 
+		if (found)
+		{
+			analyseMain.setRangReconnu(new RangPoker(this,(Denomination)Denomination.DENOMINATIONS.get(denomPaire1)));
+			analyseMain.getRangReconnu().deuxiemePaire((Denomination)Denomination.DENOMINATIONS.get(denomPaire2));
+			analyseMain.getRangReconnu().setKicker((Denomination)Denomination.DENOMINATIONS.get(denomKicker));
+			return true;
+		}
+		
 		return false;
 	}
 
