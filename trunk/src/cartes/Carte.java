@@ -73,7 +73,7 @@ public class Carte implements Comparable<Carte>
 	@Override
 	public int hashCode()
 	{
-		return CouleurCarte.COULEURS.indexOf(couleur)*1000+Denomination.DENOMINATIONS.indexOf(denom);
+		return CouleurCarte.COULEURS.indexOf(couleur)*100+Denomination.DENOMINATIONS.indexOf(denom);
 	}
 	
 	public boolean equals(Object obj)
