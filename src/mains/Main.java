@@ -164,10 +164,10 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	public int hashCode()
 	{
 		return 
-		 collCarte.get(0).hashCode()*100000000
-		+collCarte.get(1).hashCode()*1000000
-		+collCarte.get(2).hashCode()*10000
-		+collCarte.get(3).hashCode()*100
+		 collCarte.get(0).hashCode()*10000
+		+collCarte.get(1).hashCode()*1000
+		+collCarte.get(2).hashCode()*100
+		+collCarte.get(3).hashCode()*10
 		+collCarte.get(4).hashCode()*1;
 	}
 	
