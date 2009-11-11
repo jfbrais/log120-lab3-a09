@@ -49,7 +49,7 @@ public class Paire extends AbstractAnalyseurRang
 			{
 				analyseMain.setRangReconnu(new RangPoker(this,(Denomination)Denomination.DENOMINATIONS.get(no)));
 				if (i==1)
-					analyseMain.getRangReconnu().setKicker(collCarte.get(3).getDenomination());
+					analyseMain.getRangReconnu().setKicker(collCarte.get(2).getDenomination());
 				else
 					analyseMain.getRangReconnu().setKicker(collCarte.get(0).getDenomination());
 				return true;
