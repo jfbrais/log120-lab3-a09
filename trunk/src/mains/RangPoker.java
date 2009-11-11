@@ -9,6 +9,7 @@ import mains.Rang.*;
 
 public class RangPoker implements Comparable<RangPoker>
 {
+	Denomination[] couleur = null;
 	Denomination denom = null;
 	Denomination denom2 = null;
 	Denomination kicker = null;
@@ -56,7 +57,14 @@ public class RangPoker implements Comparable<RangPoker>
 			{
 				if (RANGS.indexOf(rang) == 5)
 				{
-					//check chaque carte ?
+					Denomination[] couleur2 = o.getCouleur();
+					for (int i=0;i<couleur.length;i++)
+					{
+						if (Denomination.DENOMINATIONS.indexOf(couleur[i]) > Denomination.DENOMINATIONS.indexOf(couleur2[i]))
+							return 1;
+						else if (Denomination.DENOMINATIONS.indexOf(couleur[i]) < Denomination.DENOMINATIONS.indexOf(couleur2[i]))
+							return -1;
+					}
 				}
 				else
 					;
@@ -93,5 +101,15 @@ public class RangPoker implements Comparable<RangPoker>
 	public Denomination getKicker()
 	{
 		return kicker;
+	}
+	
+	public void setCouleur(Denomination[] couleur)
+	{
+		this.couleur = couleur;
+	}
+	
+	public Denomination[] getCouleur()
+	{
+		return couleur;
 	}
 }
