@@ -159,4 +159,23 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 		rang = this.getRangPoker();
 		return rang.compareTo(o.getRangPoker());
 	}
+	
+	@Override
+	public int hashCode()
+	{
+		return 
+		 collCarte.get(0).hashCode()*100000000
+		+collCarte.get(1).hashCode()*1000000
+		+collCarte.get(2).hashCode()*10000
+		+collCarte.get(3).hashCode()*100
+		+collCarte.get(4).hashCode()*1;
+	}
+	
+	public boolean equals(Object obj)
+	{
+		if (obj instanceof Carte)
+			if (this.hashCode()==obj.hashCode())
+				return true;
+		return false;
+	}
 }
