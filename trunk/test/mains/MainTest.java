@@ -110,7 +110,7 @@ public class MainTest extends TestCase
 		main2.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.COEUR));
 		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.COEUR));
 		
-		assertTrue(main1.compareTo(main2) > 0);
+		assertTrue(main1.compareTo(main2) < 0);
 		
 		// main1 a une paire inférieure à main2
 		main1 = new Main();
