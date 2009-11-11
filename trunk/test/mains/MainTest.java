@@ -78,6 +78,40 @@ public class MainTest extends TestCase
 		
 		assertTrue(main1.compareTo(main2) > 0);
 		
+		// main1 a une paire supérieure égale à main2, mais une carte supérieure
+		main1 = new Main();
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.PIQUE));
+		main1.add(new Carte(Denomination.NEUF, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.COEUR));
+		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
+		
+		main2 = new Main();
+		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
+		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.COEUR));
+		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.COEUR));
+		
+		assertTrue(main1.compareTo(main2) > 0);
+		
+		// main1 a une paire supérieure égale à main2, mais une carte inférieure
+		main1 = new Main();
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.AS, cartes.CouleurCarte.PIQUE));
+		main1.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.TREFLE));
+		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.COEUR));
+		main1.add(new Carte(Denomination.HUIT, cartes.CouleurCarte.COEUR));
+		
+		main2 = new Main();
+		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.CARREAU));
+		main2.add(new Carte(Denomination.AS, cartes.CouleurCarte.PIQUE));
+		main2.add(new Carte(Denomination.ROI, cartes.CouleurCarte.TREFLE));
+		main2.add(new Carte(Denomination.QUATRE, cartes.CouleurCarte.COEUR));
+		main2.add(new Carte(Denomination.CINQ, cartes.CouleurCarte.COEUR));
+		
+		assertTrue(main1.compareTo(main2) > 0);
+		
 		// main1 a une paire inférieure à main2
 		main1 = new Main();
 		main1.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.CARREAU));
@@ -97,7 +131,7 @@ public class MainTest extends TestCase
 		
 		// main1 a une paire égale à main2
 		main1 = new Main();
-		main1.add(new Carte(Denomination.DEUX, cartes.CouleurCarte.CARREAU));
+		main1.add(new Carte(Denomination.ROI, cartes.CouleurCarte.CARREAU));
 		main1.add(new Carte(Denomination.TROIS, cartes.CouleurCarte.PIQUE));
 		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.TREFLE));
 		main1.add(new Carte(Denomination.SEPT, cartes.CouleurCarte.COEUR));
