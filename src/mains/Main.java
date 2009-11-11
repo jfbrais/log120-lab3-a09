@@ -1,3 +1,25 @@
+/******************************************************
+ Cours :             LOG120
+ Session :           Saison automne 2009
+ Groupe :            03
+ Projet :            Laboratoire #3
+ Étudiant(e)(s) :    Gabriel Desmarais
+ 					 Jean-François Brais-Villemur
+ Code(s) perm. :     DESG24078908
+ 					 BRAJ14088901
+ Professeur :        Jocelyn Benoît
+ Chargé de labo.:    Vincent Carrier
+ 					 Yanick Rochon
+ Nom du fichier :	 Main.java 					 
+ Date créée :        2009-11-10
+ Date dern. modif. : 2009-11-10
+ 
+ *******************************************************
+ Historique des modifications
+ *******************************************************
+ 2009-11-10 : Status Initial
+ *******************************************************/
+
 package mains;
 
 import java.util.ArrayList;
@@ -6,22 +28,20 @@ import java.util.Iterator;
 import cartes.*;
 import mains.Rang.*;
 
+/**
+ * Classe possèdant les cartes et les encapsule comme un tout.
+ * @author Gab
+ *
+ */
 public class Main implements Comparable<Main>, Iterable<Carte>
 {
 	ArrayList<Carte> collCarte = new ArrayList<Carte>();
 	RangPoker rang;
 
 	/**
-	 * 
-	 */
-	public Main()
-	{
-
-	}
-
-	/**
+	 * Ajoute une carte et retourne s'il a réussi à ajouter la carte.
 	 * @param c
-	 * @return
+	 * @return boolean
 	 */
 	public boolean add(Carte c)
 	{
@@ -49,7 +69,8 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	}
 
 	/**
-	 * @return
+	 * Regarde s'il y a 5 cartes dans la main.
+	 * @return boolean
 	 */
 	public boolean estValide()
 	{
@@ -61,7 +82,7 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	}
 
 	/**
-	 * 
+	 * Retourne la première carte de la main, ce qui est la plus haute.
 	 */
 	public Carte first()
 	{
@@ -69,7 +90,8 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	}
 
 	/**
-	 * @return
+	 * Retourne toutes les cartes que la main possède.
+	 * @return collCarte
 	 */
 	public ArrayList<Carte> getCartes()
 	{
@@ -77,7 +99,8 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	}
 
 	/**
-	 * @return
+	 * Analyse la main et retourne le rang associé à la main.
+	 * @return RangPoker
 	 */
 	public RangPoker getRangPoker()
 	{
@@ -98,17 +121,15 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 		return analyseur.getRangReconnu();
 	}
 
-	/**
-	 * 
-	 */
 	public Iterator<Carte> iterator()
 	{
 		return collCarte.iterator();
 	}
 
 	/**
+	 * Supprime une carte et retourne s'il a réussi à supprimer la carte.
 	 * @param c
-	 * @return
+	 * @return boolean
 	 */
 	public boolean remove(Carte c)
 	{
@@ -124,7 +145,8 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	}
 
 	/**
-	 * @return
+	 * retourne le nombre de carte contenu dans la main.
+	 * @return size
 	 */
 	public int size()
 	{

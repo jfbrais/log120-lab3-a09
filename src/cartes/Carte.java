@@ -1,12 +1,41 @@
+/******************************************************
+ Cours :             LOG120
+ Session :           Saison automne 2009
+ Groupe :            03
+ Projet :            Laboratoire #3
+ Étudiant(e)(s) :    Gabriel Desmarais
+ 					 Jean-François Brais-Villemur
+ Code(s) perm. :     DESG24078908
+ 					 BRAJ14088901
+ Professeur :        Jocelyn Benoît
+ Chargé de labo.:    Vincent Carrier
+ 					 Yanick Rochon
+ Nom du fichier :	 Carte.java 					 
+ Date créée :        2009-11-10
+ Date dern. modif. : 2009-11-10
+ 
+ *******************************************************
+ Historique des modifications
+ *******************************************************
+ 2009-11-10 : Status Initial
+ *******************************************************/
+
 package cartes;
 
+/**
+ * Définit ce qu'une carte possède.
+ * @author Gab
+ *
+ */
 public class Carte implements Comparable<Carte>
 {
 	Denomination denom;
 	CouleurCarte couleur;
 
 	/**
-	 * 
+	 * Constructeur de carte.
+	 * @param newDenom
+	 * @param newCouleur
 	 */
 	public Carte(Denomination newDenom, CouleurCarte newCouleur)
 	{
@@ -24,7 +53,8 @@ public class Carte implements Comparable<Carte>
 	}
 
 	/**
-	 * @return
+	 * Cherche la couleur de la carte.
+	 * @return couleur
 	 */
 	public CouleurCarte getCouleur()
 	{
@@ -32,7 +62,8 @@ public class Carte implements Comparable<Carte>
 	}
 
 	/**
-	 * 
+	 * Cherche la Dénomination de la carte.
+	 * @return denom
 	 */
 	public Denomination getDenomination()
 	{
