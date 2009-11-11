@@ -176,4 +176,47 @@ public class RangPoker implements Comparable<RangPoker>
 	{
 		return couleur;
 	}
+	
+	@Override
+	public int hashCode()
+	{
+		int i=1;
+		int hash=0;
+		
+		for (int j=0;j<couleur.length;j++)
+		{
+			hash+=i*Denomination.DENOMINATIONS.indexOf(couleur[j]);
+			i*=10;
+		}
+		
+		if (denom!=null)
+		{
+			hash+=i*Denomination.DENOMINATIONS.indexOf(denom);
+			i*=10;
+		}
+		
+		if (denom2!=null)
+		{
+			hash+=i*Denomination.DENOMINATIONS.indexOf(denom2);
+			i*=10;
+		}
+		
+		if (kicker!=null)
+		{
+			hash+=i*Denomination.DENOMINATIONS.indexOf(kicker);
+			i*=10;
+		}
+		
+		hash+=i*RANGS.indexOf(rang);
+		
+		return hash;
+	}
+	
+	public boolean equals(Object obj)
+	{
+		if (obj instanceof Carte)
+			if (this.hashCode()==obj.hashCode())
+				return true;
+		return false;
+	}
 }
