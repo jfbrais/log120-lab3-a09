@@ -74,7 +74,7 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	 */
 	public boolean estValide()
 	{
-		if (collCarte.size() == 5)
+		if (size() == 5)
 		{
 			return true;
 		}
@@ -128,19 +128,22 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 
 	/**
 	 * Supprime une carte et retourne s'il a réussi à supprimer la carte.
+	 * Utiliser l'itérateur de la classe Main.
 	 * @param c
 	 * @return boolean
 	 */
 	public boolean remove(Carte c)
 	{
-		for (int i = 0; i < collCarte.size(); i++)
+		Iterator<Carte> iter = this.iterator();
+		while (iter.hasNext())
 		{
-			if (collCarte.get(i).equals(c))
+			if (iter.next().equals(c))
 			{
-				collCarte.remove(i);
+				iter.remove();
 				return true;
 			}
 		}
+		
 		return false;
 	}
 
@@ -156,8 +159,15 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	@Override
 	public int compareTo(Main o)
 	{
-		rang = this.getRangPoker();
-		return rang.compareTo(o.getRangPoker());
+		if (this.estValide() && o.estValide())
+		{
+			rang = this.getRangPoker();
+			RangPoker rangCompare = o.getRangPoker();
+			int result = rang.compareTo(rangCompare);
+			return result;
+		}
+		else
+			return 0;
 	}
 	
 	@Override
