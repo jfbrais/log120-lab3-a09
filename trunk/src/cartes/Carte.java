@@ -29,8 +29,8 @@ package cartes;
  */
 public class Carte implements Comparable<Carte>
 {
-	Denomination denom;
-	CouleurCarte couleur;
+	private Denomination denom;
+	private CouleurCarte couleur;
 
 	/**
 	 * Constructeur de carte.

@@ -36,11 +36,11 @@ import mains.Rang.*;
  */
 public class RangPoker implements Comparable<RangPoker>
 {
-	Denomination[] couleur = null;
-	Denomination denom = null;
-	Denomination denom2 = null;
-	Denomination kicker = null;
-	AbstractAnalyseurRang rang;
+	private Denomination[] couleur = null;
+	private Denomination denom = null;
+	private Denomination denom2 = null;
+	private Denomination kicker = null;
+	private AbstractAnalyseurRang rang;
 
 	public static final List<AbstractAnalyseurRang> RANGS = Collections.unmodifiableList(Arrays
 			.asList(new AbstractAnalyseurRang[]
