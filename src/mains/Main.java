@@ -148,7 +148,7 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 	}
 
 	/**
-	 * retourne le nombre de carte contenu dans la main.
+	 * Retourne le nombre de carte contenu dans la main.
 	 * @return size
 	 */
 	public int size()
@@ -167,7 +167,7 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 			return result;
 		}
 		else
-			return 0;
+			throw new Error("One or the two hands are not valid.");
 	}
 	
 	@Override
