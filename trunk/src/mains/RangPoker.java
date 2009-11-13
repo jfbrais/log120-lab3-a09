@@ -40,14 +40,14 @@ public class RangPoker implements Comparable<RangPoker>
 	private Denomination denom = null;
 	private Denomination denom2 = null;
 	private Denomination kicker = null;
-	private AbstractAnalyseurRang rang;
+	private int rang;
 
-	public static final List<AbstractAnalyseurRang> RANGS = Collections.unmodifiableList(Arrays
-			.asList(new AbstractAnalyseurRang[]
-			{ new CarteSuperieure(), new Paire(), new DeuxPaires(),
-					new Brelan(), new Quinte(), new Couleur(),
-					new MainPleine(), new Carre(), new QuinteCouleur(),
-					new Quintuplet(), new QuinteRoyale() }));
+//	public static final List<AbstractAnalyseurRang> RANGS = Collections.unmodifiableList(Arrays
+//			.asList(new AbstractAnalyseurRang[]
+//			{ new CarteSuperieure(), new Paire(), new DeuxPaires(),
+//					new Brelan(), new Quinte(), new Couleur(),
+//					new MainPleine(), new Carre(), new QuinteCouleur(),
+//					new Quintuplet(), new QuinteRoyale() }));
 
 	/**
 	 * Constructeur se voyant attribuer un rang et une dénomination.
@@ -56,16 +56,38 @@ public class RangPoker implements Comparable<RangPoker>
 	 */
 	public RangPoker(AbstractAnalyseurRang rang, Denomination denom)
 	{
-		this.rang = rang;
 		this.denom = denom;
+		
+		if (rang instanceof CarteSuperieure)
+			this.rang = 0;
+		if (rang instanceof Paire)
+			this.rang = 1;
+		if (rang instanceof DeuxPaires)
+			this.rang = 2;
+		if (rang instanceof Brelan)
+			this.rang = 3;
+		if (rang instanceof Quinte)
+			this.rang = 4;
+		if (rang instanceof Couleur)
+			this.rang = 5;
+		if (rang instanceof MainPleine)
+			this.rang = 6;
+		if (rang instanceof Carre)
+			this.rang = 7;
+		if (rang instanceof QuinteCouleur)
+			this.rang = 8;
+		if (rang instanceof Quintuplet)
+			this.rang = 9;
+		if (rang instanceof QuinteRoyale)
+			this.rang = 10;		
 	}
 
 	@Override
 	public int compareTo(RangPoker o)
 	{
-		if (RANGS.indexOf(rang) > RANGS.indexOf(o.getRang()))
+		if (rang > o.getRang())
 			return 1;
-		else if (RANGS.indexOf(rang) < RANGS.indexOf(o.getRang()))
+		else if (rang < o.getRang())
 			return -1;
 		else
 		{
@@ -73,7 +95,7 @@ public class RangPoker implements Comparable<RangPoker>
 				return 1;
 			else if (Denomination.DENOMINATIONS.indexOf(denom) < Denomination.DENOMINATIONS.indexOf(o.getDenom()))
 				return -1;
-			else if (RANGS.indexOf(rang) == 2 || RANGS.indexOf(rang) == 3)
+			else if (rang == 2 || rang == 3 || rang == 6)
 				if (Denomination.DENOMINATIONS.indexOf(denom2) > Denomination.DENOMINATIONS.indexOf(o.getDenom2()))
 					return 1;
 				else if (Denomination.DENOMINATIONS.indexOf(denom2) < Denomination.DENOMINATIONS.indexOf(o.getDenom2()))
@@ -87,7 +109,7 @@ public class RangPoker implements Comparable<RangPoker>
 				return -1; 
 			else 
 			{
-				if (RANGS.indexOf(rang) == 5)
+				if (rang == 5)
 				{
 					Denomination[] couleur2 = o.getCouleur();
 					for (int i=0;i<couleur.length;i++)
@@ -109,7 +131,7 @@ public class RangPoker implements Comparable<RangPoker>
 	 * Retourne le rang.
 	 * @return rang
 	 */
-	public AbstractAnalyseurRang getRang()
+	public int getRang()
 	{
 		return rang;
 	}
@@ -130,6 +152,7 @@ public class RangPoker implements Comparable<RangPoker>
 	public void deuxiemePaire(Denomination denom)
 	{
 		denom2 = denom;
+		System.out.println(Denomination.DENOMINATIONS.indexOf(denom2));
 	}
 	
 	/**
@@ -207,7 +230,7 @@ public class RangPoker implements Comparable<RangPoker>
 			i*=10;
 		}
 		
-		hash+=i*RANGS.indexOf(rang);
+		hash+=i*rang;
 		
 		return hash;
 	}
