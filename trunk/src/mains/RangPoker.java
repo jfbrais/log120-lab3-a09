@@ -42,13 +42,6 @@ public class RangPoker implements Comparable<RangPoker>
 	private Denomination kicker = null;
 	private int rang;
 
-//	public static final List<AbstractAnalyseurRang> RANGS = Collections.unmodifiableList(Arrays
-//			.asList(new AbstractAnalyseurRang[]
-//			{ new CarteSuperieure(), new Paire(), new DeuxPaires(),
-//					new Brelan(), new Quinte(), new Couleur(),
-//					new MainPleine(), new Carre(), new QuinteCouleur(),
-//					new Quintuplet(), new QuinteRoyale() }));
-
 	/**
 	 * Constructeur se voyant attribuer un rang et une dénomination.
 	 * @param rang
