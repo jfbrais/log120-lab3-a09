@@ -156,9 +156,25 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 		return collCarte.size();
 	}
 
+	/** 
+	 * Retourne 0 si les deux mains sont égales ou non valide, si une main n'est pas valide, retourne
+	 * l'autre main et si les deux main sont valide, suit le compareTo de la classe Object.
+	 * @see java.lang.Comparable#compareTo(java.lang.Object)
+	 * @param main
+	 * @return int
+	 */
 	@Override
 	public int compareTo(Main o)
 	{
+		if (!this.estValide() && !o.estValide())
+			return 0;
+		
+		if (!this.estValide())
+			return -1;
+		
+		if (!o.estValide())
+			return 1;
+		
 		if (this.estValide() && o.estValide())
 		{
 			rang = this.getRangPoker();
@@ -166,8 +182,8 @@ public class Main implements Comparable<Main>, Iterable<Carte>
 			int result = rang.compareTo(rangCompare);
 			return result;
 		}
-		else
-			throw new Error("One or the two hands are not valid.");
+		
+		return 0;
 	}
 	
 	@Override
